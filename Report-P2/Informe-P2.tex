@@ -43,7 +43,7 @@
 	\chapter{Introducción}
   Para esta segunda práctica de la asignatura \emph{Sistemas y Tecnologías Web} se solicita la configuración de las distintas máquinas virtuales para el despliegue de una aplicación MEAN dentro de la estructura de máquinas virtuales que ha sido desarrollada e implementada en la primera práctica de la asignatura.
 
-  Como se puede observar a continuación, la infraestructura de máquinas virtuales desarrollada en la primera práctica de la asignatura tiene se puede observar en la siguiente figura \ref{fig:Estrcutura-Máquinas-Virtuales}. 
+  Como se puede observar a continuación, la infraestructura de máquinas virtuales desarrollada en la primera práctica de la asignatura se puede observar en la siguiente figura \ref{fig:Estrcutura-Máquinas-Virtuales}. 
 	
 	\begin{figure}[H]
 		\centering
@@ -52,12 +52,12 @@
 		\label{fig:Estrcutura-Máquinas-Virtuales}
 	\end{figure}
 
-  Cabe destacar, que durante la implementación de esta segunda práctica, ha resultado que la configuración inicial de las máquinas para la primera práctica estaba implantada de manera incorrecta, es por ello que, tras la implementación de cada una de las fases de la práctica se ha logrado solucionar dicho fallo y todo ha resultado funcionar correctamente.
+  Cabe destacar que, durante la implementación de esta segunda práctica, ha resultado que la configuración inicial de las máquinas para la primera práctica estaba implantada de manera incorrecta, es por ello que, tras la implementación de cada una de las fases de la práctica se ha logrado solucionar dicho fallo y todo ha resultado funcionar correctamente.
 	
 	\chapter{Configuración de la máquina Proxy}
 	Para esta primera máquina, se debe de realizar la instalación del sevidor web Nginx que deberá de realizar la operación de Proxy HTTP. Es por ello que, se realiza la instalación de dicho servidor web haciendo uso de la siguiente \href{https://linuxize.com/post/how-to-install-nginx-on-debian-9/}{guía}.
 
-  Una vez instalado el servidor web Nginx comprobamos el funcionamiento de este como se puede ver en la siguiente figura \ref{fig:Comprobación-Nginx}. 
+  Una vez instalado el servidor web Nginx comprobamos el funcionamiento de este, como se puede ver en la siguiente figura \ref{fig:Comprobación-Nginx}. 
 
   \begin{figure}[H]
     \centering
@@ -83,7 +83,7 @@
     \label{fig:Configuración-Reverse-Proxy}
   \end{figure}
 
-  Tras esto, se puede comprobar que el funcionamiento de Nginx ya es correcto. Para ello se acude al navegador y se introduce la siguiente dirección \emph{http://10.6.131.137/}, generando que se muestre el mensaje que se puede ver en la figura \ref{fig:Comprobación-Reverse-Proxy}.
+  Tras esto, se puede comprobar que el funcionamiento de Nginx ya es correcto. Para ello, se acude al navegador y se introduce la siguiente dirección \emph{http://10.6.131.137/}, generando que se muestre el mensaje que se puede ver en la figura \ref{fig:Comprobación-Reverse-Proxy}.
 
   \begin{figure}[H]
     \centering
@@ -95,7 +95,7 @@
   Finalmente, tras todos estos pasos, se tiene configurado de manera correcta la máquina virtual Proxy para que funcione como servidor web Nginx en modo Reverse Proxy.
 
   \chapter{Configuración de la máquina de backend}
-  Para esta máquina, se debe de realizar la instalación de \emph{NodeJS}, ya que, será la máquina en la que se desplegara una aplicación de prueba. Es por ello que, para la instalación de NodeJS se hace uso de la siguiente \href{https://linuxconfig.org/how-to-install-nodejs-on-debian-9-stretch-linux}{guía} de instalación.
+  Para esta máquina, se debe de realizar la instalación de \emph{NodeJS}, ya que, será la máquina en la que se desplegará una aplicación de prueba. Es por ello que, para la instalación de NodeJS se hace uso de la siguiente \href{https://linuxconfig.org/how-to-install-nodejs-on-debian-9-stretch-linux}{guía} de instalación.
 
   Una vez se tiene instalado de manera correcta NodeJS, se puede comprobar su instalación como se puede ver en la figura \ref{fig:Comprobación-NodeJS}
 
@@ -108,7 +108,7 @@
 
   Una vez se tiene instalado NodeJS, se procede al despliegue de una pequeña aplicación en \emph{Express} que se encuentra dentro del siguiente \href{https://github.com/crguezl/express-start}{repositorio}. Para ello, se clona dentro de la máquina backend, y, posteriormente se realiza la instalación de todas aquellas dependencias que sean necesarias haciendo uso de \verb|node|: npm install.
 
-  Tras esto, se realiza la configuración de manera correcta del código fuente de la aplicación para que esta se pueda encontrar escuchando el puerto 3000. Es por ello que se modifica el fichero \emph{hello.js} de la manera que se puede observar en la figura \ref{fig:Configuración-puerto-3000}.
+  Tras esto, se realiza la configuración de manera correcta del código fuente de la aplicación para que esta se pueda encontrar escuchando el puerto 3000. Es por ello que, se modifica el fichero \emph{hello.js} de la manera que se puede observar en la figura \ref{fig:Configuración-puerto-3000}.
 
   \begin{figure}[H]
     \centering
@@ -190,7 +190,7 @@
   \end{figure}
 
   \chapter{Conclusión}
-  Para concluir, esta segunda práctica de la asignatura me ha permitido conocer nuevas tecnologías como es el caso de Nginx que, a pesar de los problemas iniciales que me ha generado, me ha parecido una gran herramienta para poder implementar en este caso un \emph{Reverse Proxy Server} que permite tener una máquina que se encarga únicamente de redistribuir las peticiones que se realiza a la aplicación hacia nuestro servidor backend que tenemos configurado para que lanze nuestra app. Además, cabe destacar que para el resto de máquinas se han realizado ciertas configuraciones con ciertas tecnologías que ya conocía de manera previa, por tanto, estas últimas no me han parecido tan interesantes como Nginx ya que no es la primera vez que las uso como es para dicho caso. 
+  Para concluir, esta segunda práctica de la asignatura me ha permitido conocer nuevas tecnologías como es el caso de Nginx que, a pesar de los problemas iniciales que me ha generado, me ha parecido una gran herramienta para poder implementar en este caso un \emph{Reverse Proxy Server} que permite tener una máquina que se encarga únicamente de redistribuir las peticiones que se realiza a la aplicación hacia nuestro servidor backend que tenemos configurado para que lanze nuestra app. Además, cabe destacar que para el resto de máquinas, se han realizado ciertas configuraciones con ciertas tecnologías que ya conocía de manera previa, por tanto, estas últimas no me han parecido tan interesantes como Nginx ya que, no es la primera vez que las uso como es para dicho caso. 
   
   Por último, me gustaría destacar que, a pesar de que la configuración de las máquinas para la primera práctica de la asignatura estaba implementada de manera incorrecta (debido a copiar y pegar las configuraciones de interfaces de red de una máquina a otra sin observar de manera correcta), he podido aprender mucho sobre el funcionamiento de las máquinas virtuales y sobre todo, sobre el funcionamiento de la infraestructura de máquinas virtuales que se ha desarrollado en esta segunda práctica de la asignatura.
 
