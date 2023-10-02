@@ -164,4 +164,34 @@
   \chapter{Configuración de la máquina de base de datos para sistema de ficheros compartido}
   Para esta máquina, se debe de realizar la instalación de \emph{NFS} para que se pueda realizar el montaje de un sistema de ficheros compartido entre la máquina de backend y la máquina de bases de datos. Es por ello que, se hace uso de la siguiente \href{https://wiki.debian.org/NFSServerSetup}{guía} para la instalación de NFS.
 
+  Tras la aplicación de la guía anteriormente mendionada, se realiza la configuración de la máquina, de tal manera que únicamente haga uso de \emph{NFSv4}. Para ello, se modifica el fichero \emph{/etc/default/nfs-kernel-server} de la manera que se puede ver en la figura \ref{fig:Configuración-NFSv4}.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{Capturas-Informe-2-STW/Configuración-solo-uso-de-sistema-NFS4.png}
+    \caption{Configuración de la máquina para que únicamente haga uso de NFSv4.}
+    \label{fig:Configuración-NFSv4}
+  \end{figure}
+
+  Una vez se tiene todo esto anterior implementado de manera correcta, se procede a la creación de un directorio compartido en la máquina de bases de datos, para ello, se crea el directorio \emph{/home/usuario/hello}. Tras esto, se modifica el fichero \emph{/etc/exports} para que se pueda realizar el montaje de este directorio en la máquina de backend. Todo este resultado, se puede ver en las siguientes figuras \ref{fig:Comprobación-NFS-BDD} y \ref{fig:Comprobación-NFS-Backend}.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{Capturas-Informe-2-STW/Funcionamiento-sistema-NFS-BDD.png}
+    \caption{Comprobación del funcionamiento del sistema NFS por parte de la máquina de base de datos.}
+    \label{fig:Comprobación-NFS-BDD}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{Capturas-Informe-2-STW/Funcionamiento-sistema-NFS-Backend.png}
+    \caption{Comprobación del funcionamiento del sistema NFS por parte de la máquina backend.}
+    \label{fig:Comprobación-NFS-Backend}
+  \end{figure}
+
+  \chapter{Conclusión}
+  Para concluir, esta segunda práctica de la asignatura me ha permitido conocer nuevas tecnologías como es el caso de Nginx que, a pesar de los problemas iniciales que me ha generado, me ha parecido una gran herramienta para poder implementar en este caso un \emph{Reverse Proxy Server} que permite tener una máquina que se encarga únicamente de redistribuir las peticiones que se realiza a la aplicación hacia nuestro servidor backend que tenemos configurado para que lanze nuestra app. Además, cabe destacar que para el resto de máquinas se han realizado ciertas configuraciones con ciertas tecnologías que ya conocía de manera previa, por tanto, estas últimas no me han parecido tan interesantes como Nginx ya que no es la primera vez que las uso como es para dicho caso. 
+  
+  Por último, me gustaría destacar que, a pesar de que la configuración de las máquinas para la primera práctica de la asignatura estaba implementada de manera incorrecta (debido a copiar y pegar las configuraciones de interfaces de red de una máquina a otra sin observar de manera correcta), he podido aprender mucho sobre el funcionamiento de las máquinas virtuales y sobre todo, sobre el funcionamiento de la infraestructura de máquinas virtuales que se ha desarrollado en esta segunda práctica de la asignatura.
+
   \end{document}
