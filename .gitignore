@@ -1,0 +1,37 @@
+# Fichero generado cuando se crea un repositorio mediante git
+*.DS_Store
+# Archivos y directorios generados por LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.dvi
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.fdb_latexmk
+*.synctex(busy)
+
+# Archivos y directorios generados por editores LaTeX como TeXShop o TeXworks
+*.bak
+*.swp
+*.synctex.gz(busy)
+
+# Archivos de respaldo generados por editores o sistemas de control de versiones
+*~
+*.backup
+*.backup.*
+
+# Carpetas generadas automáticamente por LaTeX
+_*
+auto
+
+# Carpetas generadas por sistemas de control de versiones
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Carpeta de resultados de compilación
+/build/
