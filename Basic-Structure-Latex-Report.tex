@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass[11pt]{report}
 
 % Paquetes y configuraciones adicionales
 \usepackage{graphicx}
@@ -7,43 +7,46 @@
 \usepackage{float}
 \usepackage{titlesec}
 \usepackage{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{nameref}
+\usepackage{listings}
+\usepackage{wrapfig}
 
 % Configura los márgenes
 \geometry{
     left=2cm,   % Ajusta este valor al margen izquierdo deseado
     right=2cm,  % Ajusta este valor al margen derecho deseado
-    top=3cm,
-    bottom=3cm,
+    top=2cm,
+    bottom=2cm,
 }
+
+% Redefinir el formato del capítulo
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{1em}{\Huge}
+
+% Ajustar el espaciado antes y después del título del capítulo
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
 
 % Configuración de los títulos de las secciones
 \titlespacing{\section}{0pt}{\parskip}{\parskip}
 \titlespacing{\subsection}{0pt}{\parskip}{\parskip}
 \titlespacing{\subsubsection}{0pt}{\parskip}{\parskip}
 
-
 \begin{document}
-	
-	% Portada del informe
-	
-	\title{Laboratorio virtual en IaaS de la ULL}
-	\author{Samuel Martín Morales}
-	\date{\today}
-	
-	\maketitle
-	
-	% Índice
-	\tableofcontents
-	
-	% Secciones del informe
-	\chapter{Introducción}
-  Example....
-	
-	\chapter{Resultados}
-	Example....
-	
-	
-	\chapter{Conclusiones}
-  Example....	
-	
+
+% Portada del informe
+
+\title{Linked Data}
+\author{Samuel Martín Morales  \texttt{alu0101359526@ull.edu.es}}
+\date{\today}
+
+\maketitle
+
+% Índice
+\tableofcontents
+
+\chapter{Example Chapter}
+
 \end{document}
