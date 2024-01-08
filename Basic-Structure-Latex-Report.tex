@@ -14,6 +14,64 @@
 \usepackage{nameref}
 \usepackage{listings}
 \usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+
+% Configuración de fancyhdr
+\pagestyle{fancy}
+\fancyhf{}  % Borra los encabezados y pies de página actuales
+
+% Configuración del encabezado
+\fancyhead[L]{\textbf{\leftmark}}  % Nombre del capítulo a la izquierda
+\fancyhead[C]{}  % Contenido del encabezado en el centro
+\fancyhead[R]{\thepage}  % Número de página a la derecha
+
+% Configuración del pie de página
+\fancyfoot[L]{\today}  % Fecha a la izquierda
+\fancyfoot[C]{}  % Contenido del pie de página en el centro
+\fancyfoot[R]{\textit{Robótica Computacional}}  % Nombre del documento a la derecha
+
+% Línea horizontal en la parte superior del encabezado
+\renewcommand{\headrulewidth}{0.4pt}
+
+
+\definecolor{bashgreen}{RGB}{0, 128, 0}
+\definecolor{bashgray}{RGB}{128, 128, 128}
+\definecolor{bashblue}{RGB}{0, 0, 255}
+\definecolor{bashorange}{RGB}{255, 165, 0}
+
+% Configuración para resaltar la sintaxis de Python
+\lstdefinestyle{python}{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    commentstyle=\color{green!40!black},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{black!30},
+    backgroundcolor=\color{gray!5},
+    tabsize=4,
+    showstringspaces=false,
+}
+
+% Configuración para resaltar la sintaxis de bash
+\lstdefinestyle{bash}{
+    language=bash,
+    basicstyle=\ttfamily\small,
+    commentstyle=\color{bashgreen},
+    keywordstyle=\color{bashblue},
+    numberstyle=\tiny\color{bashgray},
+    numbers=left,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{black!30},
+    backgroundcolor=\color{gray!5},
+    tabsize=4,
+    showstringspaces=false,
+}
 
 % Configura los márgenes
 \geometry{
@@ -25,7 +83,21 @@
 
 % Redefinir el formato del capítulo
 \titleformat{\chapter}[block]
-  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{1em}{\Huge}
+  {\normalfont\huge\bfseries}
+  {}
+  {0pt}
+  {%
+    \begin{tikzpicture}[overlay, remember picture]
+      \node[anchor=north west, inner sep=0pt] at (current page.north west) {
+        \begin{tikzpicture}[remember picture, overlay]
+          \draw[fill=gray!30, draw=gray!80, line width=2pt]
+            (0,0) rectangle (\the\textwidth, -1.5cm);
+          \node[anchor=north west, text=black, font=\Huge\bfseries]
+            at (0.5, -0.75) {Capítulo \thechapter};
+        \end{tikzpicture}
+      };
+    \end{tikzpicture}
+  }
 
 % Ajustar el espaciado antes y después del título del capítulo
 \titlespacing*{\chapter}{0pt}{0pt}{20pt}
